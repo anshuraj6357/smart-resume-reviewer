@@ -8,6 +8,7 @@ import { Footer } from "./pages/footer";
 import {ResumeShowPage} from './pages/resumeshowpage'
 import {SkillsPage} from './pages/learnupgrade'
 import {ResumeTemplate} from './pages/createdresume'
+import {LandingPaging} from './pages/mainlayout'
 import  Header  from "./pages/navbar";
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
          <Route path="/forgotresumepassword/:resettoken" element={<ResetPassword />} />
           <Route path="/resumetemplate" element={<ResumeTemplate />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/" element={<ResumeUpload />} />
+          <Route path="/" element={<LandingPaging />} />
+        <Route path="/resumeupload" element={<ResumeUpload />} />
          <Route path="/learn" element={<SkillsPage />} />
         <Route path="/login" element={< Login/>} />
          <Route path="/signup" element={< Signup/>} />

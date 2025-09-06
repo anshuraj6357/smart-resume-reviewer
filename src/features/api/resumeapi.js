@@ -1,7 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 // API Base URL
-const USER_API = "http://localhost:5000/api/v1/resume/";
+ const USER_API = "http://localhost:3000/api/v1/resume/";
+//  const USER_API = import.meta.env.VITE_REACT_APP_RESUMEAPI;
 
 const resumeApi = createApi({
   reducerPath: "resumeApi",
