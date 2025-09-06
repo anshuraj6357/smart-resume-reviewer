@@ -48,6 +48,7 @@ export function ResumeShowPage() {
             Your resume data is processed securely and not stored permanently.
           </p>
         </div>
+    
       </div>
 
       {/* Summary */}

@@ -19,8 +19,17 @@ const resumeApi = createApi({
         };
       },
     }),
+     GenerateResume: builder.mutation({
+      query: (formData) => {
+        return {
+          url: 'generateresume',
+          method: 'POST',
+          body: formData,
+        };
+      },
+    }),
   }),
 });
 
-export const { useUploadResumeMutation } = resumeApi;
+export const { useUploadResumeMutation,useGenerateResumeMutation } = resumeApi;
 export default resumeApi;
