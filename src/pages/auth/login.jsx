@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Eye, EyeOff, Mail, Lock, FileText, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-hot-toast'
 import { useLoginUserMutation } from "../../features/api/authapi";
 // Optional: enable route transitions if AnimatePresence wraps routes
 import { motion } from "framer-motion";
@@ -18,16 +19,26 @@ export function Login() {
     if (errors[name]) setErrors((p) => ({ ...p, [name]: "" }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    loginUser(formData);
+    try {
+    
+      await loginUser(formData).unwrap();
+      toast.success("Login successful");
+   
+    } catch (err) {
+      console.log("erf",)
+      toast.error(err?.data?.message|| "Login failed");
+    }
   };
+
 
   const forgotPasswordPage = () => navigate("/forgotpassword");
   const goToSignup = () => navigate("/signup");
 
   useEffect(() => {
     if (isSuccess && data) navigate("/");
+
   }, [data, isSuccess, navigate]);
 
   return (

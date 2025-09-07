@@ -33,9 +33,13 @@ export function Signup() {
     if (errors[name]) setErrors((p) => ({ ...p, [name]: "" }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    if (!formData.username) {
+
+
+
+try {
+      if (!formData.username) {
       setErrors((p) => ({ ...p, username: "Name is required" }));
       return;
     }
@@ -47,11 +51,21 @@ export function Signup() {
       setErrors((p) => ({ ...p, confirmPassword: "Passwords do not match" }));
       return;
     }
-    registerUser({
+    const result=await registerUser({
       username: formData.username,
       email: formData.email,
       password: formData.password,
     });
+    console.log(result?.data?.message);
+    toast.success(result?.data?.message)
+
+    
+} catch (error) {
+       console.log(error)
+}
+
+
+  
   };
 
   useEffect(() => {

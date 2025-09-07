@@ -1,5 +1,6 @@
 // ResumeUpload.jsx
 import React, { useState, useEffect, useRef } from 'react';
+import {toast}  from 'react-hot-toast'
 import { Upload, Target, Zap, Shield, CheckCircle, Loader2, ArrowRight } from 'lucide-react';
 import { useUploadResumeMutation, useGenerateResumeMutation } from '../features/api/resumeapi';
 import { useNavigate } from 'react-router-dom'
@@ -57,7 +58,7 @@ export function ResumeUpload() {
 
       }
 
-      alert('Resume uploaded successfully!');
+      toast.success('Resume uploaded successfully!');
     } catch (err) {
       console.error(err);
       alert('Failed to upload resume!');
