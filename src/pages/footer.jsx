@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer
       className={[
-        "relative mt-20 text-slate-100",
+        "relative ",
         "bg-[linear-gradient(to_right,#4f46e5,#06b6d4_60%,#0f1631_100%)]",
       ].join(" ")}
     >

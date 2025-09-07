@@ -16,8 +16,10 @@ export function ResetPassword() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     try {
-      await ForgotUserpassword({ password, confermpassword, resettoken });
+        if(password!=confermpassword)  toast.error("password does not match")
+        else await ForgotUserpassword({ password, confermpassword, resettoken });
     } catch (error) {
       console.log(error);
       toast.error("Try again later");
