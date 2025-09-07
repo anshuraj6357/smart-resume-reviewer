@@ -94,7 +94,7 @@ export function Footer() {
                 <Twitter className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com/anshuraj6357/"
+                href="#"
                 aria-label="GitHub"
                 className="text-slate-400 hover:text-cyan-300 transition"
               >

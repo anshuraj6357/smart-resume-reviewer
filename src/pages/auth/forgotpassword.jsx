@@ -27,7 +27,7 @@ const ForgotPassword = () => {
         "bg-[linear-gradient(to_bottom,#4f46e5,#06b6d4_45%,#0f1631_85%,#000_100%)]",
       ].join(" ")}
     >
-      {/* Overlay */}
+    
       <div
         className="pointer-events-none absolute inset-0 bg-black/30"
         aria-hidden="true"
