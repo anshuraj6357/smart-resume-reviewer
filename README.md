@@ -1,12 +1,74 @@
-# React + Vite
+# 🎨 Smart Resume Reviewer – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The frontend of this project is built using **React.js** and **TailwindCSS** to provide a clean, modern, and responsive user interface.  
+It allows users to interact with the system, upload resumes, enter job descriptions, and view AI-powered analysis results.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔑 **Authentication System**
+  - Login, Signup, Forgot Password, Reset Password
+  - Email-based verification & password reset link  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 📤 **Resume Handling**
+  - Upload resume in PDF/DOC format  
+  - Manually paste resume text  
+
+- 🏷 **Job Details Input**
+  - Enter Job Title  
+  - Enter Job Description  
+
+- 🤖 **Smart Analysis Dashboard**
+  - ATS Score with detailed breakdown  
+  - Skills Match Score  
+  - Education Score  
+  - Experience Score  
+  - Certifications & Achievements  
+
+- 💡 **Feedback & Suggestions**
+  - Strengths & Weaknesses based on resume  
+  - Missing skills or certifications required for the job  
+  - Personalized suggestions to improve ATS score  
+
+- 🧪 **AI-Powered Test/Quiz**
+  - Generate multiple-choice questions (MCQs) from resume/job role  
+  - Interactive quiz interface  
+  - Show results with correct/incorrect answers  
+
+- 📧 **Email Notifications**
+  - Password reset links sent to registered email  
+  
+
+- 📚 **Learning Features**
+  - Personalized learning suggestions based on weak areas  
+  - Skill-gap recommendations for job readiness  
+  - Actionable roadmap for upskilling  
+
+- 🌙 **Responsive Design**
+  - Professional UI with TailwindCSS  
+  - Fully mobile-friendly  
+
+---
+
+## 🛠 Tech Stack
+
+- React.js  
+- TailwindCSS  
+- Redux Toolkit (for state management)  
+- Axios (for API requests)  
+- React Router  
+
+---
+
+## ⚙ Installation
+
+```bash
+# Navigate to frontend folder
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
