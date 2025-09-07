@@ -29,8 +29,17 @@ const resumeApi = createApi({
         };
       },
     }),
+     GenerateInterviewQuestion: builder.mutation({
+      query: ({levels,topicOrRole,count}) => {
+        return {
+          url: 'interviewquestion',
+          method: 'POST',
+          body: {levels,topicOrRole,count},
+        };
+      },
+    }),
   }),
 });
 
-export const { useUploadResumeMutation,useGenerateResumeMutation } = resumeApi;
+export const { useUploadResumeMutation,useGenerateInterviewQuestionMutation,useGenerateResumeMutation } = resumeApi;
 export default resumeApi;

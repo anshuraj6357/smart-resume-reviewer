@@ -11,7 +11,7 @@ import { ResumeTemplate } from './pages/createdresume';
 import { LandingPaging } from './pages/mainlayout';
 import Header from "./pages/navbar";
 import { Protectedroutes } from './protectedroutes';
-
+import { InterviewPractice } from "./pages/practisepage";
 function App() {
   return (
     <BrowserRouter>
@@ -26,6 +26,7 @@ function App() {
             <Route path="/resumetemplate" element={<Protectedroutes><ResumeTemplate /></Protectedroutes>} />
             <Route path="/forgotpassword" element={<ForgotPassword />} />
             <Route path="/" element={<LandingPaging />} />
+            <Route path="/practisepage" element={<InterviewPractice />} />
             <Route path="/resumeupload" element={<Protectedroutes><ResumeUpload /></Protectedroutes>} />
             <Route path="/learn" element={<SkillsPage />} />
             <Route path="/login" element={<Login />} />

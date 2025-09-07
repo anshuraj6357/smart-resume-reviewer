@@ -5,7 +5,7 @@ import { userLoggedIn, userLoggedOut } from "../authSlice";
 //  console.log("USER_API =", USER_API);
 
 
-// const USER_API = "http://localhost:3000/api/v1/user/";
+//  const USER_API = "http://localhost:3000/api/v1/user/";
 
 const authApi = createApi({
   reducerPath: "authApi",
