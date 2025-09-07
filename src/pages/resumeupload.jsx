@@ -205,7 +205,7 @@ export function ResumeUpload() {
                       </>
                     ) : (
                       <>
-                        <span>Generate with AI</span>
+                        <span>Enhance with AI</span>
                         <Zap className="w-5 h-5" />
                       </>
                     )}
