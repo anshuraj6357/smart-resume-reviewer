@@ -80,7 +80,7 @@ export function Footer() {
             </span>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/anshu-raj-6a4941294/"
                 aria-label="LinkedIn"
                 className="text-slate-400 hover:text-cyan-300 transition"
               >
@@ -94,7 +94,7 @@ export function Footer() {
                 <Twitter className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://github.com/anshuraj6357/"
                 aria-label="GitHub"
                 className="text-slate-400 hover:text-cyan-300 transition"
               >
