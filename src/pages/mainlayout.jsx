@@ -5,6 +5,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 export function LandingPaging() {
     const { user, isAuthenticated } = useSelector((store) => store.auth);
@@ -44,18 +45,22 @@ export function LandingPaging() {
                         </p>
                         <div className="flex flex-wrap gap-3">
 
-                            {isAuthenticated ? <a
-                                href="/resumeupload"
-                                className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-indigo-500 to-cyan-400 px-5 py-3 text-base font-semibold text-slate-900 shadow transition will-change-transform hover:-translate-y-0.5 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0"
-                            >
-                                Upload Resume
-                            </a> : <a
-                                href="/login"
-                                className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-indigo-500 to-cyan-400 px-5 py-3 text-base font-semibold text-slate-900 shadow transition will-change-transform hover:-translate-y-0.5 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0"
-                            >
-                                Upload Resume
-                            </a>}
-                           
+                            {isAuthenticated ? (
+                                <Link
+                                    to="/resumeupload"
+                                    className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-indigo-500 to-cyan-400 px-5 py-3 text-base font-semibold text-slate-900 shadow transition will-change-transform hover:-translate-y-0.5 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                                >
+                                    Upload Resume
+                                </Link>
+                            ) : (
+                                <Link
+                                    to="/login"
+                                    className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-indigo-500 to-cyan-400 px-5 py-3 text-base font-semibold text-slate-900 shadow transition will-change-transform hover:-translate-y-0.5 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                                >
+                                    Upload Resume
+                                </Link>
+                            )}
+
                             <a
                                 href="#how"
                                 className="inline-flex items-center justify-center rounded-lg border border-white/20 px-5 py-3 text-base font-semibold text-white/90 transition hover:bg-white/10 motion-reduce:transition-none"
