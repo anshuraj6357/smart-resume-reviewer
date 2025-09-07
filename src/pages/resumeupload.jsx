@@ -170,12 +170,17 @@ export function ResumeUpload() {
       hover:bg-green-700 transition duration-200 flex items-center justify-center space-x-2"
                 >
                   {generateloading ? (<>
-                    <Loader2 className="w-5 h-5 animate-spin" />
                     <span>Generating...</span>
+                    <Zap className="w-5 h-5 animate-spin" />
                   </>
-                  ) : <span>Generate with AI</span>}
+                  ) : (
+                    <>
+                      <span> Generate with Ai</span>
+                      <Zap className="w-5 h-5" />
+                    </>
+                  )}
 
-                  <Zap className="w-5 h-5" />
+                 
                 </button>
               </div>
 

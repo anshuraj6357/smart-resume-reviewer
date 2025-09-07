@@ -1,75 +1,66 @@
-import { FileText, Shield, CheckCircle, Linkedin, Twitter, Github } from "lucide-react";
+import { FileText, Linkedin, Twitter, Github } from "lucide-react";
 
-export  function Footer() {
+export function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 mt-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-14">
-        {/* Main Grid */}
-        <div className="grid md:grid-cols-4 gap-10">
-          {/* Brand Section */}
-          <div className="md:col-span-2">
-            <div className="flex items-center space-x-3 mb-5">
-              {/* <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-sm">
-                <FileText className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 tracking-tight">
+    <footer
+      className={[
+        "relative mt-20 text-slate-100",
+        "bg-[linear-gradient(to_right,#4f46e5,#06b6d4_60%,#0f1631_100%)]",
+      ].join(" ")}
+    >
+      {/* Glassmorphism Overlay */}
+      <div className="absolute inset-0 bg-black/30 backdrop-blur-xl" />
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-14">
+        {/* Top Section */}
+        <div className="grid md:grid-cols-3 gap-12">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center mb-5 space-x-3">
+              <FileText className="h-8 w-8 text-cyan-300 drop-shadow" />
+              <h3 className="text-xl font-bold text-white tracking-tight">
                 Smart Resume Reviewer
-              </h3> */}
+              </h3>
             </div>
-            <p className="text-gray-600 mb-5 max-w-md leading-relaxed">
-              AI-powered resume analysis and optimization tool that helps job seekers 
-              create compelling resumes designed to stand out in today’s competitive job market.
+            <p className="text-slate-300 max-w-md leading-relaxed">
+              AI-powered resume analysis tool helping job seekers craft
+              compelling resumes that stand out in today’s competitive job
+              market.
             </p>
-            <div className="flex items-center space-x-2 text-sm text-gray-500">
-              <Shield className="w-4 h-4" />
-              <span>End-to-end encrypted. Your data stays private.</span>
-            </div>
           </div>
 
           {/* Features */}
           <div>
-            <h4 className="font-semibold text-gray-900 mb-4 text-lg">Features</h4>
-            <ul className="space-y-3 text-sm text-gray-600">
-              <li className="flex items-center">
-                <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
-                AI-Powered Analysis
-              </li>
-              <li className="flex items-center">
-                <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
-                Job-Specific Feedback
-              </li>
-              <li className="flex items-center">
-                <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
-                Keyword Optimization
-              </li>
-              <li className="flex items-center">
-                <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
-                Secure & Private
-              </li>
+            <h4 className="font-semibold text-white mb-4 text-lg">Features</h4>
+            <ul className="space-y-3 text-slate-300 text-sm">
+              <li className="hover:text-cyan-300 transition">AI-Powered Analysis</li>
+              <li className="hover:text-cyan-300 transition">Job-Specific Feedback</li>
+              <li className="hover:text-cyan-300 transition">Keyword Optimization</li>
+              <li className="hover:text-cyan-300 transition">Secure & Private</li>
             </ul>
           </div>
 
           {/* Support */}
           <div>
-            <h4 className="font-semibold text-gray-900 mb-4 text-lg">Support</h4>
-            <ul className="space-y-3 text-sm text-gray-600">
+            <h4 className="font-semibold text-white mb-4 text-lg">Support</h4>
+            <ul className="space-y-3 text-slate-300 text-sm">
               <li>
-                <a href="#" className="hover:text-blue-600 transition-colors duration-200">
+                <a href="#" className="hover:text-cyan-300 transition">
                   Help Center
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-600 transition-colors duration-200">
+                <a href="#" className="hover:text-cyan-300 transition">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-600 transition-colors duration-200">
+                <a href="#" className="hover:text-cyan-300 transition">
                   Terms of Service
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-600 transition-colors duration-200">
+                <a href="#" className="hover:text-cyan-300 transition">
                   Contact Us
                 </a>
               </li>
@@ -77,21 +68,36 @@ export  function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Smart Resume Reviewer. All rights reserved.
+        {/* Bottom Section */}
+        <div className="border-t border-white/20 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-sm text-slate-400">
+            © {new Date().getFullYear()} Smart Resume Reviewer. All rights
+            reserved.
           </p>
           <div className="flex items-center space-x-6 mt-4 sm:mt-0">
-            <span className="text-sm text-gray-500">Made with ❤️ for job seekers</span>
+            <span className="text-sm text-slate-300">
+              Made with ❤️ for job seekers
+            </span>
             <div className="flex space-x-4">
-              <a href="#" aria-label="LinkedIn" className="text-gray-500 hover:text-blue-600 transition">
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                className="text-slate-400 hover:text-cyan-300 transition"
+              >
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" aria-label="Twitter" className="text-gray-500 hover:text-blue-400 transition">
+              <a
+                href="#"
+                aria-label="Twitter"
+                className="text-slate-400 hover:text-cyan-300 transition"
+              >
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" aria-label="GitHub" className="text-gray-500 hover:text-gray-800 transition">
+              <a
+                href="#"
+                aria-label="GitHub"
+                className="text-slate-400 hover:text-cyan-300 transition"
+              >
                 <Github className="w-5 h-5" />
               </a>
             </div>
