@@ -55,7 +55,7 @@ export function ResumeShowPage() {
           </div>
         </div>
 
-        {/* Summary */}
+        {/* Professional Summary */}
         <div className="bg-white rounded-3xl shadow-2xl border border-gray-200 p-6">
           <h3 className="text-2xl font-semibold text-gray-900 mb-3 flex items-center">
             <FileText className="w-6 h-6 mr-2 text-blue-600" />
@@ -74,14 +74,13 @@ export function ResumeShowPage() {
           </div>
           <div className={`text-right p-4 rounded-xl border-2 ${getScoreBackground(analysis.overallScore)}`}>
             <div className={`text-3xl font-bold ${getScoreColor(analysis.overallScore)}`}>
-              {analysis.overallScore}%
+             ATS Score: {analysis.atsScore}%
             </div>
-            <div className="text-sm text-gray-600">ATS Score</div>
+        
           </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-
           {/* Score Breakdown */}
           <div className="bg-white rounded-3xl shadow-2xl border border-gray-200 p-6">
             <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
@@ -144,9 +143,15 @@ export function ResumeShowPage() {
           {analysis.experience.roles.length === 0 ? (
             <p className="text-sm text-gray-500">No roles listed</p>
           ) : (
-            <ul className="list-disc list-inside text-gray-700 mt-2">
+            <ul className="list-disc list-inside text-gray-700 mt-2 space-y-2">
               {analysis.experience.roles.map((role, i) => (
-                <li key={i}>{role}</li>
+                <li key={i}>
+                  <p className="font-medium">{role.title} @ {role.company}</p>
+                  <p className="text-sm text-gray-500">{role.dates}</p>
+                  {role.evidence && role.evidence.map((e, j) => (
+                    <p key={j} className="text-sm text-gray-600">- {e}</p>
+                  ))}
+                </li>
               ))}
             </ul>
           )}
@@ -156,17 +161,30 @@ export function ResumeShowPage() {
         <div className="bg-white rounded-3xl shadow-2xl border border-gray-200 p-6">
           <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
             <BookOpen className="w-5 h-5 mr-2 text-orange-600" />
-            Certifications Needed
+            Certifications
           </h3>
-          {analysis.certifications.length === 0 ? (
-            <p className="text-sm text-gray-500">No certifications</p>
-          ) : (
-            <ul className="list-disc list-inside text-gray-700 space-y-1">
-              {analysis.certifications.map((c, i) => (
-                <li key={i}>{c}</li>
-              ))}
-            </ul>
-          )}
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <p className="font-medium text-gray-800">Present</p>
+              <ul className="list-disc list-inside text-gray-700 space-y-1">
+                {analysis.certifications.present.map((c, i) => (
+                  <li key={i}>{c}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="font-medium text-gray-800">Recommended</p>
+              {analysis.certifications.recommended.length === 0 ? (
+                <p className="text-sm text-gray-500">No recommendations</p>
+              ) : (
+                <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  {analysis.certifications.recommended.map((c, i) => (
+                    <li key={i}>{c}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
         </div>
 
         {/* Skills */}
@@ -178,32 +196,24 @@ export function ResumeShowPage() {
 
           <div>
             <p className="font-medium">Matched</p>
-            {analysis.skills.matched.length === 0 ? (
-              <p className="text-sm text-gray-500">No matched skills</p>
-            ) : (
-              <div className="flex flex-wrap gap-2 mt-1">
-                {analysis.skills.matched.map((s, i) => (
-                  <span key={i} className="px-2 py-1 bg-green-100 text-green-700 rounded text-sm">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            )}
+            <div className="flex flex-wrap gap-2 mt-1">
+              {analysis.skills.matched.map((s, i) => (
+                <span key={i} className="px-2 py-1 bg-green-100 text-green-700 rounded text-sm">
+                  {s}
+                </span>
+              ))}
+            </div>
           </div>
 
           <div className="mt-4">
             <p className="font-medium">Missing</p>
-            {analysis.skills.missing.length === 0 ? (
-              <p className="text-sm text-gray-500">No missing skills</p>
-            ) : (
-              <div className="flex flex-wrap gap-2 mt-1">
-                {analysis.skills.missing.map((s, i) => (
-                  <span key={i} className="px-2 py-1 bg-red-100 text-red-700 rounded text-sm">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            )}
+            <div className="flex flex-wrap gap-2 mt-1">
+              {analysis.skills.missing.map((s, i) => (
+                <span key={i} className="px-2 py-1 bg-red-100 text-red-700 rounded text-sm">
+                  {s}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -213,11 +223,14 @@ export function ResumeShowPage() {
             <Star className="w-5 h-5 mr-2 text-yellow-500" />
             Suggestions
           </h3>
-          <ul className="space-y-2">
+          <ul className="space-y-3">
             {analysis.suggestions.map((s, i) => (
-              <li key={i} className="flex items-start">
-                <AlertCircle className="w-4 h-4 text-blue-600 mt-1 mr-2" />
-                {s}
+              <li key={i} className="p-3 rounded-lg border border-gray-200 bg-gray-50">
+                <p className="font-medium text-gray-800">
+                  Priority {s.priority}: {s.action}
+                </p>
+                <p className="text-sm text-gray-600">{s.detail}</p>
+                <p className="text-xs text-gray-500 mt-1">ETA: {s.etaWeeks} weeks</p>
               </li>
             ))}
           </ul>
